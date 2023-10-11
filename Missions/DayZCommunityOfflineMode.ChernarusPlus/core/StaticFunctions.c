@@ -246,26 +246,8 @@ static Weapon_Base COM_CreateWeapon( PlayerBase oPlayer, string sWeapon )
 
 static PlayerBase COM_CreateCustomDefaultCharacter()
 {
-    PlayerBase oPlayer = PlayerBase.Cast( GetGame().CreatePlayer( NULL, GetGame().CreateRandomPlayer(), COM_GetSpawnPoints().GetRandomElement(), 0, "NONE") );
-
-    oPlayer.GetInventory().CreateInInventory( "MilitaryBeret_UN" );
-    oPlayer.GetInventory().CreateInInventory( "M65Jacket_Black" );
-    oPlayer.GetInventory().CreateInInventory( "TacticalGloves_Black" );
-    oPlayer.GetInventory().CreateInInventory( "HunterPants_Autumn" );
-    oPlayer.GetInventory().CreateInInventory( "MilitaryBoots_Black" );
-    oPlayer.GetInventory().CreateInInventory( "AliceBag_Camo" );
-    oPlayer.GetInventory().CreateInInventory( "Shovel" );
-
-    Weapon_Base oWpn = COM_CreateWeapon( oPlayer, "UMP45" );
-    oPlayer.PredictiveTakeEntityToHands( oWpn );
-
-    Magazine oMag = Magazine.Cast( oPlayer.GetInventory().CreateInInventory( "Mag_UMP_25Rnd" ) );
-    oPlayer.GetDayZPlayerInventory().PostWeaponEvent( new WeaponEventAttachMagazine( oPlayer, oMag ) );
-
-    oPlayer.GetInventory().CreateInInventory( "Mag_UMP_25Rnd" );
-
-    oPlayer.SetQuickBarEntityShortcut( oWpn, 0, true );
-    oPlayer.SetQuickBarEntityShortcut( oMag, 1, true );
+    PlayerBase oPlayer = PlayerBase.Cast( GetGame().CreatePlayer( NULL, GetGame().CreateRandomPlayer(), "4564.50 0 2671.11", 0, "NONE") );
+    oPlayer.GetInventory().CreateInInventory( "AviatorGlasses" );
 
     return oPlayer;
 }

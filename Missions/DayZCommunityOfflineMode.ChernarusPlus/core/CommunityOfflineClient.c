@@ -48,10 +48,12 @@ class CommunityOfflineClient extends MissionGameplay
 		super.OnMissionFinish();
 	}
 
-    void OnMissionLoaded()
-    {
-		COM_GetModuleManager().OnMissionLoaded();
-    }
+        override void OnMissionLoaded()
+        {
+            COM_GetModuleManager().OnMissionLoaded();
+
+            super.OnMissionLoaded();
+        }
 
 	override void OnUpdate( float timeslice )
 	{

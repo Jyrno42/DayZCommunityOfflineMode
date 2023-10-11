@@ -38,10 +38,12 @@ class CommunityOfflineServer : MissionServer
 		super.OnMissionFinish();
 	}
 
-    void OnMissionLoaded()
-    {
-		COM_GetModuleManager().OnMissionLoaded();
-    }
+        void OnMissionLoaded()
+        {
+            COM_GetModuleManager().OnMissionLoaded();
+
+            super.OnMissionLoaded();
+        }
 
 
 	override void OnUpdate( float timeslice )
